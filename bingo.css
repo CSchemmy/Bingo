@@ -1,0 +1,70 @@
+#DivAnzeigeTabelle td {
+    border:1px solid;
+    color: #fff;
+    font-family: Verdana;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #00AA88;
+}
+
+#DivKnopfTabelle{
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+#DivKnopfTabelle td {
+    border:1px solid;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #EE0000;
+}
+#Anzeige{
+    height: 100%
+}
+
+@media only screen and (min-width: 0){
+html{font-size:14px}
+#NotSoFast{font-size: 1em;}
+}
+@media only screen and (min-width: 600px){
+html{font-size:14.5px}
+#NotSoFast{font-size: 1.5em;}
+}
+@media only screen and (min-width: 900px){
+html{font-size:15px}
+#NotSoFast{font-size: 2em;}
+}
+@media only screen and (min-width: 1200px){
+html{font-size:15.5px}
+}
+
+#NotSoFastBackGround{
+    background: #aaaaaa none repeat scroll 0 0;
+    color: black;
+    height: 100%;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#NotSoFast{
+  left: 25%;
+  top: 40%;
+  width:50%;
+  position : fixed;
+  background: #aaaaaa;
+  color:black;
+  opacity: 0.8;
+}
+
+#NotSoFast button{
+  font-size: 1em;
+}
+
+
+

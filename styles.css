@@ -1,0 +1,7 @@
+body {
+ background: #00BB99;
+ margin:0;
+ direction: ltr;
+ unicode-bidi: embed;
+ text-align: center;
+}
