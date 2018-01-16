@@ -7,6 +7,14 @@ var used = new Array(76);
 var noNextziff;
 var lastNewZiffTime = new Date();
 var state;
+var ledOn = "#0080c9"
+//var ledlow = "#4cb9ea"
+var ledlowr = "4c"
+var ledlowg = "b9"
+var ledlowb = "ea"
+var ledlow = "#"+ledlowr+ledlowg+ledlowb
+var ledlowcompare = "rgb("+parseInt("0x"+ledlowr)+", "+parseInt("0x"+ledlowg)+", "+parseInt("0x"+ledlowb)+")"
+// rgb(0, 128, 201) none repeat scroll 0% 0%
 
 function FillTable() {
  var out = "";
@@ -38,11 +46,11 @@ function FillTable() {
 
  px = reth * 0.7;
  out = "<tr>";
- out = out + "<td style=\"background:#777777;  height:"+reth+"px; width:" + retw+ "px;\">B</td>";
- out = out + "<td style=\"background:#777777;  height:"+reth+"px; width:" + retw+ "px;\">I</td>";
- out = out + "<td style=\"background:#777777;  height:"+reth+"px; width:" + retw+ "px;\">N</td>";
- out = out + "<td style=\"background:#777777;  height:"+reth+"px; width:" + retw+ "px;\">G</td>";
- out = out + "<td style=\"background:#777777;  height:"+reth+"px; width:" + retw+ "px;\">O</td>";
+ out = out + "<td id=\"header\" style=\"height:"+reth+"px; width:" + retw+ "px;\">B</td>";
+ out = out + "<td id=\"header\" style=\"height:"+reth+"px; width:" + retw+ "px;\">I</td>";
+ out = out + "<td id=\"header\" style=\"height:"+reth+"px; width:" + retw+ "px;\">N</td>";
+ out = out + "<td id=\"header\" style=\"height:"+reth+"px; width:" + retw+ "px;\">G</td>";
+ out = out + "<td id=\"header\" style=\"height:"+reth+"px; width:" + retw+ "px;\">O</td>";
  out = out + "</tr>";
  for (i = 0; i < 15; i++){
     out = out + "<tr>";
@@ -88,7 +96,7 @@ function resumeGame(){
  for (i = 1; i<= 75; i++) {
   if (used[i] == 1){
    Zid = "Z" + i;
-   document.getElementById(Zid).style.background = "#88ff00";
+   document.getElementById(Zid).style.background = ledOn;
    document.getElementById(Zid).style.color = "#000000";
   }
  }
@@ -100,16 +108,16 @@ function resumeGame(){
 function FlashLastZid() {
   if (lastZid != 0){
    var last = document.getElementById(lastZid);
-   if (last.style.backgroundColor === "rgb(0, 170, 136)"){
+   if (last.style.backgroundColor === ledlowcompare){
     flashCount++;
-    last.style.background = "#88ff00";
+    last.style.background = ledOn;
     if (100 == flashCount){
      suspendGame();
      clearInterval (flashTimer);
     }
    }
    else
-    last.style.background = "#00aa88";
+    last.style.background = ledlow;
   }
   else
    clearInterval(flashTimer);
@@ -127,10 +135,10 @@ function Nextziff() {
  if (Zaehler < 300){
   clearInterval (flashTimer);
   used[Z]=1;
-  document.getElementById(Zid).style.background = "#88ff00";
+  document.getElementById(Zid).style.background = ledOn;
   document.getElementById(Zid).style.color = "#000000";
   if (lastZid != 0){
-   document.getElementById(lastZid).style.background = "#88ff00";
+   document.getElementById(lastZid).style.background = ledOn;
    document.getElementById(lastZid).style.color = "#000000";
   }
   lastZid=Zid;
@@ -187,7 +195,7 @@ function setmuster(muster){
   var mask = (16 >> ((i-1)/15));
   Zid = "Z" + i;
   if ((src & mask) == mask){
-   document.getElementById(Zid).style.background = "#88ff00";
+   document.getElementById(Zid).style.background = ledOn;
    document.getElementById(Zid).style.color = "#000000";
   }
   else{

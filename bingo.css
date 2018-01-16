@@ -1,11 +1,21 @@
 #DivAnzeigeTabelle td {
     border:1px solid;
-    color: #fff;
+    color: #b2b2b2;
     font-family: Verdana;
     font-size: 16px;
     text-align: center;
     text-decoration: none;
-    background-color: #00AA88;
+    background-color: #ffffff;
+}
+
+#DivAnzeigeTabelle #header {
+    color: #eeeeee;
+    background-color: #194b7d;
+}
+
+#DivAnzeigeTabelle .ledOn {
+    color: #eeeeee;
+    background-color: #194b7d;
 }
 
 #DivKnopfTabelle{
@@ -13,7 +23,7 @@ margin-top: 20px;
 margin-bottom: 20px;
 }
 
-#DivKnopfTabelle td {
+#DivKnopfTabelle #knopf {
     border:1px solid;
     color: #fff;
     padding: 30px;
@@ -21,6 +31,11 @@ margin-bottom: 20px;
     text-decoration: none;
     background-color: #EE0000;
 }
+
+#DivKnopfTabelle #logo {
+    padding-left: 30px;
+}
+
 #Anzeige{
     height: 100%
 }
