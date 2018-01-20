@@ -8,3 +8,5 @@ In der zwischen zeit musste ich dieses Spiel schon einige male reparieren.
 Nach dem Laden wird B,I,N,G,O angezeigt danach wird mit jedem Tastendruck eine neue Zahl gezogen. Wird die Taste länger gedrückt Erscheint wieder B,I,N,G,O und das Spiel beginnt von vorne.
 ### neuer Ansatz
 Eine Lösung für den Browser und somit auf dem Tablet zuspielen. 
+### Ausprobieren
+https://cschemmy.github.io/Bingo/
