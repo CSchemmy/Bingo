@@ -28,7 +28,7 @@ margin-bottom: 20px;
     padding: 30px;
     text-align: center;
     text-decoration: none;
-    background:url(images/knopf.png) center round;
+    background:url(images/knopf.png) center no-repeat ;
 }
 
 #DivKnopfTabelle #logo {
