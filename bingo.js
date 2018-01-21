@@ -76,6 +76,7 @@ function RestartGame(){
  }
  lastZid = 0;
  state="OFF";
+ lastNewZiffTime = new Date();
  Bingieren();
 }
 
@@ -101,6 +102,7 @@ function resumeGame(){
   }
  }
  flashTimer = setInterval (FlashLastZid, 300);
+ lastNewZiffTime = new Date();
  flashCount=0;
  state="play";
 }

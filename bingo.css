@@ -24,12 +24,11 @@ margin-bottom: 20px;
 }
 
 #DivKnopfTabelle #knopf {
-    border:1px solid;
     color: #fff;
     padding: 30px;
     text-align: center;
     text-decoration: none;
-    background-color: #EE0000;
+    background:url(images/knopf.png) center round;
 }
 
 #DivKnopfTabelle #logo {
