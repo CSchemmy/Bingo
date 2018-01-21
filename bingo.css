@@ -8,19 +8,33 @@
     background-color: #00AA88;
 }
 
+#DivAnzeigeTabelle #header {
+    color: #eeeeee;
+    background-color: #777777;
+}
+
+#DivAnzeigeTabelle .ledOn {
+    color: #eeeeee;
+    background-color: #88ff00;
+}
+
 #DivKnopfTabelle{
 margin-top: 20px;
 margin-bottom: 20px;
 }
 
-#DivKnopfTabelle td {
-    border:1px solid;
+#DivKnopfTabelle #knopf {
     color: #fff;
     padding: 30px;
     text-align: center;
     text-decoration: none;
-    background-color: #EE0000;
+    background:url(images/knopf.png) center no-repeat ;
 }
+
+#DivKnopfTabelle #logo {
+    padding-left: 30px;
+}
+
 #Anzeige{
     height: 100%
 }

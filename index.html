@@ -20,9 +20,11 @@
     </div>
     <div id="DivKnopfTabelle" >
     <table>
-<!--      <tr> <td id="Z"></td> -->
-      <td id="knopf"></td>
-<!--      <td id="Zlast"></td></tr> -->
+      <tr>
+        <td style="width:42.5%;"></td>
+        <td id="knopf"></td>
+        <td id="logo" style="width:42.5%;"></td>
+      </tr>
     </table>
     </div>
    </center>
@@ -39,13 +41,13 @@
   </div>
   <script>
     FillTable();
-    var detecttouch = !!('ontouchstart' in window) || !!('ontouchstart' in document.documentElement) || !!window.ontouchstart || !!window.Touch || !!window.onmsgesturechange || (window.DocumentTouch && window.document instanceof window.DocumentTouch);
+    var detecttouch = !!('onmousedown' in window) || !!('onmousedown' in document.documentElement) || !!window.onmousedown;
     if (detecttouch){
-      document.getElementById("knopf").ontouchend = Done;
-      document.getElementById("knopf").ontouchstart = Do;
-    } else {
       document.getElementById("knopf").onmouseup = Done;
       document.getElementById("knopf").onmousedown = Do;
+    } else {
+      document.getElementById("knopf").ontouchend = Done;
+      document.getElementById("knopf").ontouchstart = Do;
     }
     history.pushState(null, null, document.title);
     window.addEventListener('popstate', function () {

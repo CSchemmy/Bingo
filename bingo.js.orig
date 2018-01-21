@@ -76,7 +76,6 @@ function RestartGame(){
  }
  lastZid = 0;
  state="OFF";
- lastNewZiffTime = new Date();
  Bingieren();
 }
 
@@ -97,12 +96,11 @@ function resumeGame(){
  for (i = 1; i<= 75; i++) {
   if (used[i] == 1){
    Zid = "Z" + i;
-   document.getElementById(Zid).style.background = ledOn;
+   document.getElementById(Zid).style.background = "#88ff00";
    document.getElementById(Zid).style.color = "#000000";
   }
  }
  flashTimer = setInterval (FlashLastZid, 300);
- lastNewZiffTime = new Date();
  flashCount=0;
  state="play";
 }
@@ -110,16 +108,16 @@ function resumeGame(){
 function FlashLastZid() {
   if (lastZid != 0){
    var last = document.getElementById(lastZid);
-   if (last.style.backgroundColor === ledlowcompare){
+   if (last.style.backgroundColor === "rgb(0, 170, 136)"){
     flashCount++;
-    last.style.background = ledOn;
+    last.style.background = "#88ff00";
     if (100 == flashCount){
      suspendGame();
      clearInterval (flashTimer);
     }
    }
    else
-    last.style.background = ledlow;
+    last.style.background = "#00aa88";
   }
   else
    clearInterval(flashTimer);
@@ -137,10 +135,10 @@ function Nextziff() {
  if (Zaehler < 300){
   clearInterval (flashTimer);
   used[Z]=1;
-  document.getElementById(Zid).style.background = ledOn;
+  document.getElementById(Zid).style.background = "#88ff00";
   document.getElementById(Zid).style.color = "#000000";
   if (lastZid != 0){
-   document.getElementById(lastZid).style.background = ledOn;
+   document.getElementById(lastZid).style.background = "#88ff00";
    document.getElementById(lastZid).style.color = "#000000";
   }
   lastZid=Zid;
@@ -197,7 +195,7 @@ function setmuster(muster){
   var mask = (16 >> ((i-1)/15));
   Zid = "Z" + i;
   if ((src & mask) == mask){
-   document.getElementById(Zid).style.background = ledOn;
+   document.getElementById(Zid).style.background = "#88ff00";
    document.getElementById(Zid).style.color = "#000000";
   }
   else{
