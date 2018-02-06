@@ -7,14 +7,8 @@ var used = new Array(76);
 var noNextziff;
 var lastNewZiffTime = new Date();
 var state;
-var ledOn = "#88ff00"
-//var ledlow = "#00aa88"
-var ledlowr = "00"
-var ledlowg = "aa"
-var ledlowb = "88"
-var ledlow = "#"+ledlowr+ledlowg+ledlowb
-var ledlowcompare = "rgb("+parseInt("0x"+ledlowr)+", "+parseInt("0x"+ledlowg)+", "+parseInt("0x"+ledlowb)+")"
-// rgb(0, 170, 136) none repeat scroll 0% 0%
+var classNameLedOn ="ledOn"
+var classNameLedOnLow ="ledOnLow"
 
 function FillTable() {
  var out = "";
@@ -64,6 +58,11 @@ function FillTable() {
 //  out = out + "<tr><td>"+reth+"</td><td>" + retw+ "</td><td>" + window.innerHeight+ "</td><td>" + window.innerWidth+ "</td></tr>"
   document.styleSheets[1].cssRules[0].style["font-size"]=px+"px"
   document.getElementById("AnzeigeTabelle").innerHTML = out;
+  document.getElementById("BigNumber").style.width=document.getElementById("DivAnzeigeTabelle").clientWidth+"px";
+  document.getElementById("BigNumber").style.height=document.getElementById("DivAnzeigeTabelle").clientHeight+"px";
+  document.getElementById("BigNumber").style.left=document.getElementById("DivAnzeigeTabelle").offsetLeft+"px";
+  var bignrfontsize = Math.min(document.getElementById("DivAnzeigeTabelle").clientWidth*0.7,document.getElementById("DivAnzeigeTabelle").clientHeight*0.7); 
+  document.getElementById("BigNumber").style.fontSize=bignrfontsize+"px";
   state="OFF";
   Bingieren();
 }
@@ -77,6 +76,7 @@ function RestartGame(){
  lastZid = 0;
  state="OFF";
  lastNewZiffTime = new Date();
+ document.getElementById("BigNumber").innerHTML="";
  Bingieren();
 }
 
@@ -85,8 +85,8 @@ function suspendGame(){
  var Zid = 0;
  for (i = 1; i<= 75; i++) {
   Zid = "Z" + i;
-  document.getElementById(Zid).style.background = "";
-  document.getElementById(Zid).style.color = "";
+  document.getElementById(Zid).className = ""
+  document.getElementById("BigNumber").innerHTML="";
  }
  state="suspend";
 }
@@ -94,12 +94,17 @@ function suspendGame(){
 function resumeGame(){
  var i = 0;
  var Zid = 0;
+ var Z = 0;
  for (i = 1; i<= 75; i++) {
   if (used[i] == 1){
    Zid = "Z" + i;
-   document.getElementById(Zid).style.background = ledOn;
-   document.getElementById(Zid).style.color = "#000000";
+   document.getElementById(Zid).className = classNameLedOn
+   if (lastZid == Zid)
+     Z = i;
   }
+ }
+ if (Z != 0){
+   document.getElementById("BigNumber").innerHTML=Z;
  }
  flashTimer = setInterval (FlashLastZid, 300);
  lastNewZiffTime = new Date();
@@ -110,16 +115,16 @@ function resumeGame(){
 function FlashLastZid() {
   if (lastZid != 0){
    var last = document.getElementById(lastZid);
-   if (last.style.backgroundColor === ledlowcompare){
+   if (last.className === classNameLedOnLow){
     flashCount++;
-    last.style.background = ledOn;
+    last.className = classNameLedOn;
     if (100 == flashCount){
      suspendGame();
      clearInterval (flashTimer);
     }
    }
    else
-    last.style.background = ledlow;
+    last.className = classNameLedOnLow;
   }
   else
    clearInterval(flashTimer);
@@ -137,11 +142,10 @@ function Nextziff() {
  if (Zaehler < 300){
   clearInterval (flashTimer);
   used[Z]=1;
-  document.getElementById(Zid).style.background = ledOn;
-  document.getElementById(Zid).style.color = "#000000";
+  document.getElementById(Zid).className = classNameLedOn
+  document.getElementById("BigNumber").innerHTML=Z;
   if (lastZid != 0){
-   document.getElementById(lastZid).style.background = ledOn;
-   document.getElementById(lastZid).style.color = "#000000";
+   document.getElementById(lastZid).className = classNameLedOn;
   }
   lastZid=Zid;
   lastNewZiffTime = new Date();
@@ -184,6 +188,14 @@ function Done() {
  clearInterval(newGameTimer);
 }
 
+function BigNumbberOn(){
+  document.getElementById("BigNumber").style.display="block";
+}
+
+function BigNumbberOff(){
+  document.getElementById("BigNumber").style.display="none";
+}
+
 function NotSoFastbuttom(){
    document.getElementById("NotSoFast").style.display="none";
    document.getElementById("NotSoFastBackGround").style.display="none";
@@ -197,12 +209,10 @@ function setmuster(muster){
   var mask = (16 >> ((i-1)/15));
   Zid = "Z" + i;
   if ((src & mask) == mask){
-   document.getElementById(Zid).style.background = ledOn;
-   document.getElementById(Zid).style.color = "#000000";
+   document.getElementById(Zid).className = classNameLedOn
   }
   else{
-   document.getElementById(Zid).style.background = "";
-   document.getElementById(Zid).style.color = "";
+   document.getElementById(Zid).className = ""
   }
  }
 }
