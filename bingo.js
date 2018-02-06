@@ -61,6 +61,8 @@ function FillTable() {
   document.getElementById("BigNumber").style.width=document.getElementById("DivAnzeigeTabelle").clientWidth+"px";
   document.getElementById("BigNumber").style.height=document.getElementById("DivAnzeigeTabelle").clientHeight+"px";
   document.getElementById("BigNumber").style.left=document.getElementById("DivAnzeigeTabelle").offsetLeft+"px";
+  var bignrfontsize = Math.min(document.getElementById("DivAnzeigeTabelle").clientWidth*0.7,document.getElementById("DivAnzeigeTabelle").clientHeight*0.7); 
+  document.getElementById("BigNumber").style.fontSize=bignrfontsize+"px";
   state="OFF";
   Bingieren();
 }
@@ -142,7 +144,6 @@ function Nextziff() {
   used[Z]=1;
   document.getElementById(Zid).className = classNameLedOn
   document.getElementById("BigNumber").innerHTML=Z;
-  document.getElementById("BigNumber").style.fontSize=document.getElementById("DivAnzeigeTabelle").clientHeight*0.8+"px";
   if (lastZid != 0){
    document.getElementById(lastZid).className = classNameLedOn;
   }
