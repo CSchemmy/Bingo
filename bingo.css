@@ -14,8 +14,19 @@
 }
 
 #DivAnzeigeTabelle .ledOn {
-    color: #eeeeee;
-    background-color: #194b7d;
+    color: #000000;
+    background-color: #0080c9;
+}
+
+#DivAnzeigeTabelle .ledOnLow {
+    color: #000000;
+    background-color: #4cb9ea;
+}
+
+#BigNumber {
+    color: #194b7d;
+    position: absolute;
+    top: 0;
 }
 
 #DivKnopfTabelle{
@@ -79,6 +90,3 @@ html{font-size:15.5px}
 #NotSoFast button{
   font-size: 1em;
 }
-
-
-

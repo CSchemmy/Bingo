@@ -6,5 +6,8 @@ Anstelle Holzklötzchen die aus einem Beutel gezogen werden auf eine Pappe zu le
 In der zwischen zeit musste ich dieses Spiel schon einige male reparieren.
 ### Bedienung
 Nach dem Laden wird B,I,N,G,O angezeigt danach wird mit jedem Tastendruck eine neue Zahl gezogen. Wird die Taste länger gedrückt Erscheint wieder B,I,N,G,O und das Spiel beginnt von vorne.
+Mit dem drücken der Anzeige kann die gezogene Ziffer in gross angezeigt bzw. ausgeblendet werden.
 ### neuer Ansatz
 Eine Lösung für den Browser und somit auf dem Tablet zuspielen. 
+### Ausprobieren
+https://cschemmy.github.io/Bingo/

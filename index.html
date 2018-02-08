@@ -18,6 +18,8 @@
       </tbody>
      </table>
     </div>
+    <div id=BigNumber style="display:none;">
+    </div>
     <div id="DivKnopfTabelle" >
     <table>
       <tr>
@@ -29,9 +31,9 @@
     </div>
    </center>
   </div>
-  <div id="NotSoFastBackGround" style="display: none;">
+  <div id="NotSoFastBackGround" style="display:none;">
   </div>
-  <div id="NotSoFast" style="display: none;">
+  <div id="NotSoFast" style="display:none;">
       <div id=NotSoFasttop style="height:4px"></div>
       <div style="height:6px"></div>
         <a>Nicht so schnell hinterenander drücken</a><br>
@@ -45,9 +47,13 @@
     if (detecttouch){
       document.getElementById("knopf").onmouseup = Done;
       document.getElementById("knopf").onmousedown = Do;
+      document.getElementById("BigNumber").onmouseup = BigNumbberOff;
+      document.getElementById("DivAnzeigeTabelle").onmouseup = BigNumbberOn;
     } else {
       document.getElementById("knopf").ontouchend = Done;
       document.getElementById("knopf").ontouchstart = Do;
+      document.getElementById("BigNumber").ontouchend = BigNumbberOff;
+      document.getElementById("DivAnzeigeTabelle").ontouchend = BigNumbberOn;
     }
     history.pushState(null, null, document.title);
     window.addEventListener('popstate', function () {
