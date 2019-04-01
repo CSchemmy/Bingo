@@ -33,15 +33,24 @@
     </div>
    </center>
   </div>
-  <div id="NotSoFastBackGround" style="display:none;">
+  <div id="DisableKeysBackGround" style="display:none;">
   </div>
   <div id="NotSoFast" style="display:none;">
       <div id=NotSoFasttop style="height:4px"></div>
       <div style="height:6px"></div>
         <a>Nicht so schnell hinterenander drücken</a><br>
       <div style="height:6px"></div>
-      <button onclick="NotSoFastbuttom()">Ok</button>
+      <button onclick="NotSoFastbutton()">Ok</button>
       <div id=NotSoFastbottom style="height:4px"></div>
+  </div>
+  <div id="RestarGame" style="display:none;">
+      <div id=RestarGametop style="height:4px"></div>
+      <div style="height:6px"></div>
+        <a>Neues Spiel starten ?</a><br>
+      <div style="height:6px"></div>
+      <button onclick="RestarGameAbortbutton()">Abbruch</button>
+      <button onclick="RestarGameOkbutton()">Ok</button>
+      <div id=RestarGamebottom style="height:4px"></div>
   </div>
   <script>
     FillTable();
@@ -55,7 +64,7 @@
     } else {
       document.getElementById("knopf").ontouchend = Done;
       document.getElementById("knopf").ontouchstart = Do;
-       document.getElementById("restart").ontouchstart = Restart;
+      document.getElementById("restart").ontouchstart = Restart;
       document.getElementById("BigNumber").ontouchend = BigNumbberOff;
       document.getElementById("DivAnzeigeTabelle").ontouchend = BigNumbberOn;
     }

@@ -60,21 +60,21 @@ margin-bottom: 20px;
 
 @media only screen and (min-width: 0){
 html{font-size:14px}
-#NotSoFast{font-size: 1em;}
+#NotSoFast,#RestarGame{font-size: 1em;}
 }
 @media only screen and (min-width: 600px){
 html{font-size:14.5px}
-#NotSoFast{font-size: 1.5em;}
+#NotSoFast,#RestarGame{font-size: 1.5em;}
 }
 @media only screen and (min-width: 900px){
 html{font-size:15px}
-#NotSoFast{font-size: 2em;}
+#NotSoFast,#RestarGame{font-size: 2em;}
 }
 @media only screen and (min-width: 1200px){
 html{font-size:15.5px}
 }
 
-#NotSoFastBackGround{
+#DisableKeysBackGround{
     background: #aaaaaa none repeat scroll 0 0;
     color: black;
     height: 100%;
@@ -85,7 +85,7 @@ html{font-size:15.5px}
     width: 100%;
 }
 
-#NotSoFast{
+#NotSoFast,#RestarGame{
   left: 25%;
   top: 40%;
   width:50%;
