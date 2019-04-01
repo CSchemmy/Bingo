@@ -23,7 +23,9 @@
     <div id="DivKnopfTabelle" >
     <table>
       <tr>
-        <td style="width:42.5%;"></td>
+        <td style="width:10%;"></td>
+        <td id="restart"></td>
+        <td style="width:17.5%;"></td>
         <td id="knopf"></td>
         <td id="logo" style="width:42.5%;"> <img src="images/CC_Logo_RGB_72-DPI_mit.png" alt="Crowdcode" style="height:30px;"> </td>
       </tr>
@@ -47,11 +49,13 @@
     if (detecttouch){
       document.getElementById("knopf").onmouseup = Done;
       document.getElementById("knopf").onmousedown = Do;
+      document.getElementById("restart").onmousedown = Restart;
       document.getElementById("BigNumber").onmouseup = BigNumbberOff;
       document.getElementById("DivAnzeigeTabelle").onmouseup = BigNumbberOn;
     } else {
       document.getElementById("knopf").ontouchend = Done;
       document.getElementById("knopf").ontouchstart = Do;
+       document.getElementById("restart").ontouchstart = Restart;
       document.getElementById("BigNumber").ontouchend = BigNumbberOff;
       document.getElementById("DivAnzeigeTabelle").ontouchend = BigNumbberOn;
     }

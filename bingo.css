@@ -42,6 +42,14 @@ margin-bottom: 20px;
     background:url(images/knopf.png) center no-repeat ;
 }
 
+#DivKnopfTabelle #restart {
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    background:url(images/restart.png) center no-repeat ;
+}
+
 #DivKnopfTabelle #logo {
     padding-left: 30px;
 }

@@ -14,8 +14,12 @@
 					<feMergeNode /> </feMerge>
 			</filter>
 		</defs>
-
-  <polygon points="54,40 54,110 116,75" style="fill: #1a4b7e; filter: url(#inset-shadow);" />
-
+  <path d="m 75,45 l 0,-21.5 -28,28 28,28 0,-21.5 
+     c 14.895,0 25,12.105 25,25 0,14.895 -12.105,25 -25,25 -14.895,0 -25,-12.105 -25,-25
+     l -13,0 
+     c 0,19.89 16.11,38 38,38 19.89,0 38,-16.11 38,-38 0,-19.89 -16.11,-38 -38,-38
+     z"
+     style="fill:#1a4b7e;filter:url(#inset-shadow)"
+      />
 </svg>
 
