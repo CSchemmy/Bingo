@@ -176,7 +176,7 @@ function Done() {
     var lastms  = lastNewZiffTime.getMinutes() * 60000 + lastNewZiffTime.getSeconds() * 1000 + lastNewZiffTime.getMilliseconds();
     if ((jetztms - lastms)<500){
      document.getElementById("NotSoFast").style.display="block";
-     document.getElementById("NotSoFastBackGround").style.display="block";
+     document.getElementById("DisableKeysBackGround").style.display="block";
     } else {
      Nextziff();
     }
@@ -196,16 +196,27 @@ function BigNumbberOff(){
   document.getElementById("BigNumber").style.display="none";
 }
 
-function NotSoFastbuttom(){
+function NotSoFastbutton(){
    document.getElementById("NotSoFast").style.display="none";
-   document.getElementById("NotSoFastBackGround").style.display="none";
+   document.getElementById("DisableKeysBackGround").style.display="none";
+}
+
+function RestarGameAbortbutton(){
+   document.getElementById("RestarGame").style.display="none";
+   document.getElementById("DisableKeysBackGround").style.display="none";
+}
+
+function RestarGameOkbutton(){
+   document.getElementById("RestarGame").style.display="none";
+   document.getElementById("DisableKeysBackGround").style.display="none";
+   RestartGame();
 }
 
 function Restart(){
-  if (confirm('Neues Spiel starten?')) {
-     RestartGame()
-  } 
+   document.getElementById("RestarGame").style.display="block";
+   document.getElementById("DisableKeysBackGround").style.display="block";     
 }
+
 function setmuster(muster){
  var i = 0;
  var Zid = 0;
