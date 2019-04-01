@@ -201,6 +201,11 @@ function NotSoFastbuttom(){
    document.getElementById("NotSoFastBackGround").style.display="none";
 }
 
+function Restart(){
+  if (confirm('Neues Spiel starten?')) {
+     RestartGame()
+  } 
+}
 function setmuster(muster){
  var i = 0;
  var Zid = 0;
